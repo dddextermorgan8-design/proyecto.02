@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalla | Catálogo de Egresados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { 
+            --book-height: 520px; 
+            --beige-bg: #f5f5dc; 
+            --kalla-dark: #2c2c2c;
+        }
+        
+        body { 
+            background-color: var(--beige-bg); 
+            font-family: 'Segoe UI', sans-serif;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        /* PORTADA */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .brand-name { font-size: clamp(3rem, 10vw, 6rem); letter-spacing: 15px; text-transform: uppercase; font-weight: 200; color: var(--kalla-dark); }
+        .hero-description { max-width: 700px; font-size: 1.1rem; line-height: 1.8; color: #555; }
+
+        /* CATÁLOGO */
+        .book-wrapper { padding: 80px 0; min-height: 100vh; display: flex; align-items: center; }
+        .book-page { 
+            background: #ffffff; 
+            min-height: var(--book-height); 
+            border-radius: 0 20px 20px 0;
+            box-shadow: 25px 25px 50px rgba(0,0,0,0.1);
+            padding: 50px;
+            border-left: 25px solid #1a1a1a;
+        }
+
+        .color-swatch { height: 140px; border-radius: 10px; margin-bottom: 15px; border: 1px solid rgba(0,0,0,0.08); }
+        .color-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; text-align: center; }
+
+        /* SECCIÓN CONTACTO */
+        .contact-section { min-height: 100vh; padding: 80px 0; background-color: #fff; }
+
+        /* BOTONES */
+        .btn-kalla {
+            border: 2px solid var(--kalla-dark);
+            color: var(--kalla-dark);
+            padding: 10px 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-kalla:hover { background-color: var(--kalla-dark); color: white; }
+        
+        .carousel-control-prev, .carousel-control-next { filter: invert(1); width: 5%; }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section" id="inicio">
+        <h1 class="brand-name">KALLA</h1>
+        <div class="hero-description mb-5">
+            "En este catálogo verás diferentes tonos de telas que podrás elegir para que te acompañen en tu último año de secundaria al igual que en primaria, nuestro objetivo es facilitarte la elección de colores que puede ofrecerte nuestra marca."
+        </div>
+        <a href="#catalogo" class="btn btn-kalla">Explorar Catálogo</a>
+    </section>
+
+    <div class="book-wrapper" id="catalogo">
+        <div class="container text-center">
+            
+            <div class="mb-4 d-flex justify-content-center gap-3">
+                <a href="#inicio" class="btn btn-sm btn-outline-secondary">← Volver al Inicio</a>
+                <a href="#contacto" class="btn btn-sm btn-dark">Contactanos</a>
+            </div>
+
+            <div id="bookCarousel" class="carousel slide shadow-lg" data-bs-interval="false">
+                <div class="carousel-inner mx-auto" style="max-width: 850px;">
+                    
+                    <div class="carousel-item active">
+                        <div class="book-page text-start">
+                            <h3 class="mb-5 border-bottom pb-2">Azules Clásicos</h3>
+                            <div class="row g-4 text-center">
+                                <div class="col-4"><div class="color-swatch" style="background: #001f3f;"></div><p class="color-label">Marino</p></div>
+                                <div class="col-4"><div class="color-swatch" style="background: #0074D9;"></div><p class="color-label">Francia</p></div>
+                                <div class="col-4"><div class="color-swatch" style="background: #7FDBFF;"></div><p class="color-label">Celeste</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="book-page text-start">
+                            <h3 class="mb-5 border-bottom pb-2">Rojos & Intensos</h3>
+                            <div class="row g-4 text-center">
+                                <div class="col-4"><div class="color-swatch" style="background: #85144b;"></div><p class="color-label">Bordó</p></div>
+                                <div class="col-4"><div class="color-swatch" style="background: #FF4136;"></div><p class="color-label">Rojo Vivo</p></div>
+                                <div class="col-4"><div class="color-swatch" style="background: #F012BE;"></div><p class="color-label">Fucsia</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="book-page text-start">
+                            <h3 class="mb-5 border-bottom pb-2">Básicos</h3>
+                            <div class="row g-4 text-center">
+                                <div class="col-4"><div class="color-swatch" style="background: #111;"></div><p class="color-label">Negro</p></div>
+                                <div class="col-4"><div class="color-swatch" style="background: #aaa;"></div><p class="color-label">Gris</p></div>
+                                <div class="col-4"><div class="color-swatch" style="background: #fff; border: 1px solid #ddd;"></div><p class="color-label">Blanco</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact-section" id="contacto">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center mb-5">
+                <h2 class="display-5">Contactanos</h2>
+                <p class="text-muted">Estamos para ayudarte a diseñar el buzo de tus sueños.</p>
+            </div>
+
+            <div class="row g-5">
+                <div class="col-md-5">
+                    <h5>Información de Kalla</h5>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-3">📍 <strong>Showroom:</strong> Calle Textil 123</li>
+                        <li class="mb-3">📱 <strong>WhatsApp:</strong> +54 9 11 1234 5678</li>
+                        <li class="mb-3">📧 <strong>Email:</strong> hola@kalla.com</li>
+                        <li class="mb-3">📸 <strong>Instagram:</strong> @kalla.textil</li>
+                    </ul>
+                    <a href="#inicio" class="btn btn-link text-dark p-0">↑ Volver al inicio</a>
+                </div>
+
+                <div class="col-md-7">
+                    <div class="card shadow-sm border-0 p-4">
+                        <h5>¿Qué te pareció nuestro catálogo?</h5>
+                        <form class="mt-3">
+                            <div class="mb-3">
+                                <label class="form-label">Tu opinión nos importa:</label>
+                                <textarea class="form-control" rows="4" placeholder="Escribe aquí tu calificación o sugerencia..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100">Enviar Calificación</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
